@@ -2,7 +2,9 @@
 
 import socket
 
+
 #注意port为整数，不是字符串
+
 target_host = "www.baidu.com"
 target_port = 80
 
@@ -19,3 +21,6 @@ def tcp_client(target_host, target_port):
 
     print(response.decode('utf-8'))
 
+if __name__ == '__main__':
+
+    tcp_client("127.0.0.1", 9999)
