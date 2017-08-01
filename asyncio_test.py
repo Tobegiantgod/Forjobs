@@ -14,7 +14,7 @@ async def custom_sleep():
 
 async def factorial(name, number):
     f = 1
-    for i in range(2, number+1):
+    for i in range(1, number):
         print('Task{}:Compute factorial({})'.format(name, i))
         await custom_sleep()
         f*=i
@@ -23,8 +23,8 @@ async def factorial(name, number):
 start = time.time()
 loop = asyncio.get_event_loop()
 
-tasks = [asyncio.ensure_future(factorial('A',3)),
-        asyncio.ensure_future(factorial('B',4)),
+tasks = [asyncio.ensure_future(factorial('A',4)),
+        asyncio.ensure_future(factorial('B',5)),
         ]
 loop.run_until_complete(asyncio.wait(tasks))
 loop.close()
